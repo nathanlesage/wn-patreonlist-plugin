@@ -1,14 +1,14 @@
 <?php namespace HendrikErz\PatreonList\Models;
 
-use Model;
+use Winter\Storm\Database\Model;
 
 /**
  * Model
  */
 class Patron extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-    use \October\Rain\Database\Traits\SoftDelete;
+    use \Winter\Storm\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\SoftDelete;
 
     protected $casts = [
         'patron_status' => 'boolean',

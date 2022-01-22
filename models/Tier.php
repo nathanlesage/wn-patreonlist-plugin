@@ -1,15 +1,15 @@
 <?php namespace HendrikErz\PatreonList\Models;
 
-use Model;
+use Winter\Storm\Database\Model;
 
 /**
  * Model
  */
 class Tier extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
-    use \October\Rain\Database\Traits\Sortable;
-    use \October\Rain\Database\Traits\SoftDelete;
+    use \Winter\Storm\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Sortable;
+    use \Winter\Storm\Database\Traits\SoftDelete;
 
     protected $dates = ['deleted_at'];
 
@@ -20,7 +20,7 @@ class Tier extends Model
     ];
 
     protected $implements = [
-        'October\Rain\Database\Traits\Sortable',
+        'Winter\Storm\Database\Traits\Sortable',
     ];
 
     public $hasMany = [

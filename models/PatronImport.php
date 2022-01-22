@@ -11,7 +11,7 @@ class PatronImport extends \Backend\Models\ImportModel
      */
     public $rules = [];
 
-    // More info: https://octobercms.com/docs/backend/import-export
+    // More info: https://wintercms.com/docs/backend/import-export
     public function importData($results, $sessionKey = null)
     {
         $seen = []; // Remember what patrons we had to warn on duplicates

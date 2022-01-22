@@ -1,7 +1,7 @@
 <?php namespace HendrikErz\PatreonList\Updates;
 
-use October\Rain\Database\Updates\Migration;
-use Schema;
+use Winter\Storm\Database\Updates\Migration;
+use Winter\Storm\Support\Facades\Schema;
 
 class BuilderTableCreateHendrikerzPatreonlistPatrons extends Migration
 {

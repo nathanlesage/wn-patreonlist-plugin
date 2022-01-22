@@ -1,6 +1,6 @@
 <?php namespace HendrikErz\PatreonList\Controllers;
 
-use BackendMenu;
+use Backend\Facades\BackendMenu;
 use Backend\Classes\Controller;
 
 class Tiers extends Controller

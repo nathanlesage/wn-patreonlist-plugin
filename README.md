@@ -1,16 +1,16 @@
-# OctoberCMS PatreonList Plugin
+# WinterCMS Patreon Plugin
 
-> Automate managing your patron list on your website!
+> Automate managing your list of patrons on your website!
 
-This plugin automates the process of keeping your patron list in sync with the patrons on your Patreon account. It allows you to simply upload a CSV file as Patreon allows you to download them from the relationship manager, and write the data into OctoberCMS's database. Then, you can customize how the patrons are displayed on your page.
+This plugin automates the process of keeping your patron list in sync with the patrons on your Patreon account. It allows you to simply upload a CSV file as Patreon allows you to download them from the relationship manager, and write the data into WinterCMS's database. Then, you can customize how the patrons are displayed on your page.
 
 ## Install
 
-Simply install the plugin from the OctoberCMS marketplace. The ID is `HendrikErz.PatreonList`. Alternatively, you can also download this repository and place it in your `/plugins`-directory. When you refresh the OctoberCMS backend, it should be installed automatically.
+Install the plugin using composer. The ID is `HendrikErz.PatreonList`. Alternatively, you can also download this repository and place it in your `/plugins`-directory. When you refresh the WinterCMS backend, it should be installed automatically.
 
 ## Usage
 
-The PatreonList-plugin ships with two components and tries to mimick the relationship manager in the backend. The components display either a simple list of all patrons, or displays a list of all tiers. In principle, you can access all information from both components, only the page variable will be different.
+The PatreonList-plugin ships with two components and offers a simple relationship manager in the backend. The components display either a simple list of all patrons, or displays a list of all tiers. In principle, you can access all information from both components, only the page variable will be different.
 
 ### Adding Patrons to the Website
 
@@ -18,7 +18,7 @@ The first step is to fill in the database with some patrons. To do so, go to you
 
 The CSV file is one you can download from Patreon's relationship manager. You can either pre-filter the patrons who will be downloaded directly on Patreon, or you can simply export all and decide to perform additional sorting via the plugin. The latter is recommended (for more information, see below).
 
-Drag a file into the respective field, or click the "Upload" button, and point October to your file. You can customize how the CSV file looks, if something seems odd, but the default file format has been adapted to the way Patreon's CSV files are formatted.
+Drag a file into the respective field, or click the "Upload" button, and point Winter to your file. You can customize how the CSV file looks, if something seems odd, but the default file format has been adapted to the way Patreon's CSV files are formatted.
 
 The database fields have been named so that the "Auto match columns" button should automatically match the fields in the CSV file to the fields in the database. **Attention**: The ID, Created On, Updated On, and Removed On-fields are internally used to manage the patron records. Likewise, some fields from the CSV file have not been mapped. This has two reasons: first, uploading a lot of personal data constitutes a potential risk, which is why only fields that make sense are imported. The second reason is that the plugin's purpose is solely to display a list of patrons, for which we only need the name and the respective tier.
 
@@ -87,7 +87,7 @@ tier.patrons // Contains a list of all patrons on that tier
 
 A few notes on how the plugin will behave. It is made so that you can upload a new CSV list every month, which will update old patron data, and create new entries for all new patrons. However, it does not delete old ones. But by exporting all your patrons (including former ones) every time, former patrons will have their active patron-status revoked, so if you simply upload a full list, they won't display anymore. The system uses the Patreon ID to identify already existing patrons.
 
-A last note on data privacy: This plugin handles a lot of personal data, which should never leave your page. While OctoberCMS itself is pretty secure, remember that when you render components, you potentially could display the patron's emails or their overall lifetime pledge amount by writing something like `{{ patron.email }}` in your CMS pages. **Don't do that, under no circumstances!** Your patrons won't be happy to see that (except, of course, they gave their consent) and you don't want to have any lawsuits. I know that most of you reading this will already know not to do that, but as we're on the internet, sometimes people forget things like that. Thank you for your attention.
+A last note on data privacy: This plugin handles a lot of personal data, which should never leave your page. While WinterCMS itself is pretty secure, remember that when you render components, you potentially could display the patron's emails or their overall lifetime pledge amount by writing something like `{{ patron.email }}` in your CMS pages. **Don't do that, under no circumstances!** Your patrons won't be happy to see that (except, of course, they gave their consent) and you don't want to have any lawsuits. I know that most of you reading this will already know not to do that, but as we're on the internet, sometimes people forget things like that. Thank you for your attention.
 
 ### Reference: Field Names
 

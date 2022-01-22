@@ -1,10 +1,10 @@
 <?php namespace HendrikErz\PatreonList\Controllers;
 
-use BackendMenu;
+use Backend\Facades\BackendMenu;
 use Backend\Classes\Controller;
-use Flash;
+use Winter\Storm\Support\Facades\Flash;
+use Winter\Storm\Support\Facades\Input;
 use HendrikErz\PatreonList\Models\Patron;
-use Input;
 
 class Patrons extends Controller
 {
