@@ -1,5 +1,6 @@
 <?php namespace HendrikErz\PatreonList\Updates;
 
+use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 use Winter\Storm\Support\Facades\Schema;
 
@@ -7,15 +8,15 @@ class BuilderTableUpdateHendrikerzPatreonlistPatrons extends Migration
 {
     public function up()
     {
-        Schema::table('hendrikerz_patreonlist_patrons', function ($table) {
+        Schema::table('hendrikerz_patreonlist_patrons', function (Blueprint $table) {
             // Change some columns
             // The pledges can now also be in floats
             $table->float('current_pledge')->unsigned()->default(0.0)->change();
             $table->float('lifetime_pledge')->unsigned()->default(0.0)->change();
 
             // New columns: Currency, and Charge Frequency
-            $table->string('charge_frequency', 100)->nullable(); // As far as I know it's monthly and yearly
-            $table->string('currency', 50)->nullable(); // e.g. USD, EUR, GBP ...
+            $table->string('charge_frequency')->nullable(); // As far as I know it's monthly and yearly
+            $table->string('currency')->nullable(); // e.g. USD, EUR, GBP ...
 
             // Remove unused columns
             $table->dropColumn('max_amount');
