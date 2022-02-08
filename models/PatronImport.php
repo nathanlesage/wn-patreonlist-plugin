@@ -73,6 +73,11 @@ class PatronImport extends \Backend\Models\ImportModel
               $data['last_charge'] = Carbon::now();
             }
 
+            if ($data['patron_since'] === '') {
+                $this->logWarning($row, $data['name'] . " (" . $data['email'] . ") does not seem to be a patron. Skipping.");
+                continue;
+            }
+
             // Now, let's see if we already have this patron somewhere
             try {
                 $patron = Patron::where('patreon_id', $data['patreon_id'])->firstOrFail();
