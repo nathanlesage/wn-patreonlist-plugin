@@ -4,7 +4,7 @@ use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 use Winter\Storm\Support\Facades\Schema;
 
-class BuilderTableCreateHendrikerzPatreonlistPatrons extends Migration
+class HendrikErzPatreonListCreatePatronsTable extends Migration
 {
     public function up()
     {
@@ -20,11 +20,12 @@ class BuilderTableCreateHendrikerzPatreonlistPatrons extends Migration
             $table->string('twitter');
             $table->boolean('patron_status')->default(0);
             $table->boolean('follows_you')->default(0);
-            $table->integer('current_pledge')->unsigned()->default(0);
-            $table->integer('lifetime_pledge')->unsigned()->default(0);
+            $table->float('current_pledge')->unsigned()->default(0.0);
+            $table->float('lifetime_pledge')->unsigned()->default(0.0);
+            $table->string('charge_frequency')->nullable();
+            $table->string('currency')->nullable();
             $table->integer('tier_id')->unsigned()->nullable();
             $table->dateTime('patron_since')->nullable();
-            $table->integer('max_amount')->nullable()->unsigned()->default(0);
             $table->dateTime('last_charge')->nullable();
             $table->string('charge_status')->nullable();
             $table->boolean('hide_from_all')->default(0);

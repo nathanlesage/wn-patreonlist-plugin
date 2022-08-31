@@ -4,7 +4,7 @@ use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 use Winter\Storm\Support\Facades\Schema;
 
-class BuilderTableCreateHendrikerzPatreonlistTiers extends Migration
+class HendrikErzPatreonListCreateTiersTable extends Migration
 {
     public function up()
     {
@@ -17,7 +17,8 @@ class BuilderTableCreateHendrikerzPatreonlistTiers extends Migration
             $table->integer('sort_order')->default(0);
             $table->string('name');
             $table->text('description')->nullable();
-            $table->smallInteger('pledge_amount')->unsigned();
+            $table->float('pledge_amount')->unsigned()->default(0.0);
+            $table->string('currency')->nullable(); // e.g. USD, EUR, GBP ...
         });
     }
 
